@@ -400,6 +400,7 @@ class _SlidingUpPanelState extends State<SlidingUpPanel> with SingleTickerProvid
 
     if (widget.panel != null){
       return GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onVerticalDragUpdate: (DragUpdateDetails dets) => _onGestureSlide(dets.delta.dy),
         onVerticalDragEnd: (DragEndDetails dets) => _onGestureEnd(dets.velocity),
         child: child,
